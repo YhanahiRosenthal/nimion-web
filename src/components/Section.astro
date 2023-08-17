@@ -1,0 +1,6 @@
+---
+const { class: className } = Astro.props
+---
+
+<!-- This component is used to have a consistent horizontal padding. a class is added so we can add classes from the calling component. --><!-- The min-height is pretty random -->
+<section class=`flex px-12 min-h-[768px] ${className}`><slot /></section>
