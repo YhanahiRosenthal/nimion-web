@@ -32,7 +32,7 @@ module.exports = {
                 'garamond': ['Garamond']
             },
 			boxShadow: {
-				"cards": "8px 7px 11px -7px rgba(0,0,0,0.75)",
+				"cards": "4px 5px 10px -7px rgba(0,0,0,0.75)",
 			}
 		}
 	}
