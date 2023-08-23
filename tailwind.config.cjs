@@ -5,6 +5,7 @@ module.exports = {
 		extend: {
 			colors: {
 				"primary-dark-background": "#080E29",
+				"primary-dark-intense": "#02012C",
 				"secondary-light": "#8893F3"
 			},
 			spacing: {
@@ -14,7 +15,10 @@ module.exports = {
                 'montserrat': ['Montserrat'],
                 'lato': ['Lato'],
                 'garamond': ['Garamond']
-            }
+            },
+			boxShadow: {
+				'custom': '0 0 1.6rem #8893F3',
+			  },
 		}
 	}
 }
