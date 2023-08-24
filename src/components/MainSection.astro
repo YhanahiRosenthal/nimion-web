@@ -1,16 +1,17 @@
 ---
 import Header from "./Header.astro";
 ---
-<section class="bg-[url('../images/background.png')] bg-cover bg-no-repeat h-[50rem] text-white text-center">
+<section class="bg-[url('../images/background.png')] bg-cover bg-no-repeat pb-[16rem] text-white text-center">
     <Header />
+    <div class="animate-appear">
         <div class="mt-16">
             <h2 class="text-4xl font-semibold">
                 Hacemos tu pagina web
             </h2>
             <h2 class="text-5xl font-bold " >totalmente personalizada</h2>
         </div>
-        <div class="bg-secondary-light w-[50%] h-[0.2rem] rounded-3xl m-auto mt-10"></div>
-        <ul class= "flex justify-center gap-4 mt-20">
+        <div class="grid place-self-center bg-secondary-light w-[50%] h-[0.2rem] rounded-3xl m-auto mt-10 transition-all animate-widther "></div>
+        <ul class= "flex justify-center flex-wrap gap-4 mt-20">
             <li class="flex flex-col gap-16">
                 <span class="text-[.8rem] flex gap-6 w-[24rem] h-[3rem] text-start">
                     <img class="w-[1.4rem] h-[1.4rem]" src="../images/grupo.png" alt="Icon group" />
@@ -36,4 +37,5 @@ import Header from "./Header.astro";
             <button class="bg-secondary-light bg-opacity-70 w-[9rem] h-[2.8rem] rounded-sm transition-all hover:bg-opacity-100 ">Contactanos</button>
             <button class="bg-secondary-light bg-opacity-70 w-[9rem] h-[2.8rem] rounded-sm transition-all hover:bg-opacity-100 ">Ver precios</button>
         </div>
+    </div>
 </section>

@@ -5,6 +5,7 @@ module.exports = {
 		extend: {
 			colors: {
 				"primary-dark-background": "#080E29",
+				"primary-dark-intense": "#02012C",
 				"secondary-light": "#8893F3",
 				"logo-gray": "#DADFF7",
 				"golden": "#CCA56A",
@@ -30,10 +31,7 @@ module.exports = {
                 'montserrat': ['Montserrat'],
                 'lato': ['Lato'],
                 'garamond': ['Garamond']
-            },
-			boxShadow: {
-				"cards": "4px 5px 10px -7px rgba(0,0,0,0.75)",
-			}
+            }
 		}
 	}
-}
+};
