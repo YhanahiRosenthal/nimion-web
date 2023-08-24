@@ -20,18 +20,27 @@ module.exports = {
 				'custom': '0 0 1.6rem #8893F3',
 			},
 			animation: {
-				widther: 'expandWidth 2s',
-				appear: 'appear 2s',
+				widther: 'expandWidth 1.5s',
+				appear: 'appear 1.5s',
+				appearTitle: 'appearTitle 1.5s',
 			},
 			keyframes: {
 				'appear': {
-					'0%': { 
+					'0%': {
 						opacity: '0',
 						transform: 'translateY(30%)'
 					},
-					'100%': { 
+					'100%': {
 						opacity: '1',
 						transform: 'translateY(0)'
+					},
+				},
+				'appearTitle': {
+					'0%': {
+						opacity: '0'
+					},
+					'100%': {
+						opacity: '1'
 					},
 				},
 				'expandWidth': {
