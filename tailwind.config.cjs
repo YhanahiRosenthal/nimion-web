@@ -31,7 +31,10 @@ module.exports = {
                 'montserrat': ['Montserrat'],
                 'lato': ['Lato'],
                 'garamond': ['Garamond']
-            }
+            },
+			boxShadow: {
+				"cards": "4px 5px 10px -7px rgba(0,0,0,0.75)",
+			}
 		}
 	}
 };
