@@ -1,0 +1,53 @@
+---
+const steps = [
+    {
+        img: "../images/stepO.png",
+        title: "Conversamos y te escuchamos",
+        stOne: " Lorem ipsum dolor, sit amet c",
+        stTwo: " Lorem ipsum dolor, sit amet conse",
+        stThree: "Deleniti facere  reprehenderit.",
+    },
+    {
+        img: "../images/stepTw.png",
+        title: "Construimos tu pagina web",
+        stOne: " Lorem ipsum dolor, sit amet casd a asd ",
+        stTwo: " Lorem ipsum dolor, met conse",
+        stThree: "Del asd asda niti facere  reprehenasdderit.",
+    },
+    {
+        img: "../images/stepTh.png",
+        title: "Te acompañamos durante y despues de finalizar tu web",
+        stOne: " Lorem ipsum dolasdasd asd as or, sit amet c",
+        stTwo: " Lorem ipsum doasda lor, sit amet conse",
+        stThree: "Deleniti face asd re  reprehenderit.",
+    },
+]
+---
+<section class="bg-primary-dark-background">
+    <h4 class="text-white font-semibold text-[2.5rem] text-center pt-16">Cómo lo Logramos?</h4>
+    <p class=" text-golden font-medium text-[1.1rem] text-center pt-16">Pasos a seguir</p>
+    <article class="flex flex-wrap justify-evenly py-16">
+        <div class="hidden lg:block bg-secondary-light w-[63%] h-[0.45rem] rounded-3xl -mx-10 mt-16 absolute"></div>
+        {steps.map((step) => (
+            <div class="text-white z-10">
+                <img class="w-[9rem] h-[9rem] m-auto" src={step.img} alt="Icon step">
+                <h6 class=" font-semibold text-[1.2rem] max-w-[20rem] h-16 m-auto text-center" >{step.title}</h6>
+                <div class="max-w-[90%] m-auto">
+                    <div class="flex gap-9 my-14">
+                        <img class="w-5 h-5" src="../images/tick.png" alt="Icon tick">
+                        <p class=" text-sm">{step.stOne}</p>
+                    </div>
+                    <div class="flex gap-9 my-14">
+                        <img class="w-5 h-5" src="../images/tick.png" alt="Icon tick">
+                        <p class=" text-sm">{step.stTwo}</p>
+                    </div>
+                    <div class="flex gap-9 my-14">
+                        <img class="w-5 h-5" src="../images/tick.png" alt="Icon tick">
+                        <p class=" text-sm">{step.stThree}</p>
+                    </div>
+                </div>
+            </div>
+            )
+        )}
+    </article>
+</section>
