@@ -1,0 +1,96 @@
+---
+interface Option {
+    img?: boolean;
+    title: string;
+    optOn: string;
+    optTw: {
+        desc: string;
+        bft: boolean;
+    } | string;
+    optTh: string;
+    optFo: {
+        desc: string;
+        bft: boolean;
+    } | string;
+    bft: boolean;
+}
+
+const tick = '../images/trick.png';
+const noTick = '../images/noTick.png';
+
+const chooseArray: Option[] = [
+    {
+        img: true,
+        title: 'NIMION',
+        optOn: 'Precios accesibles',
+        optTw: {
+            desc: 'Desarrollo totalmente personalizado',
+            bft: true
+        },
+        optTh: 'Servicio de cuidado de web y hosting',
+        optFo: {
+            desc: 'Diseños modernos para mejor experiencia del cliente',
+            bft: true
+        },
+        bft: true
+    },
+    {
+        title: 'Agencias',
+        optOn: 'Precios muy elevados',
+        optTw: 'Diseño una sola vez',
+        optTh: 'Poca atencion a tus necesidades',
+        optFo: {
+            desc: 'Desarrollo a partir de templates o personalizados',
+            bft: true
+        },
+        bft: false
+    },
+    {
+        title: 'Independientes',
+        optOn: 'Diseño una sola vez',
+        optTw: {
+            desc: 'Precios variables',
+            bft: true
+        },
+        optTh: 'Poca confiabilidad',
+        optFo: 'Desarrollo a partir de templates',
+        bft: false
+    }
+];
+---
+<section class='bg-primary-dark-background font-semibold text-white pb-16 pt-16'>
+    <h4 class="text-center text-[2.5rem] pb-6">¿Por qué elegirnos?</h4>
+    <article>
+        <div>
+            <div class="grid place-self-center bg-secondary-light w-[80%] h-[0.2rem] rounded-3xl m-auto mt-10 transition-all"></div>
+            {chooseArray.map((choose) => (
+                <ul class="flex flex-wrap md:flex-nowrap justify-center items-center gap-[4rem] w-[80%] m-auto ">
+                    <div class="flex items-center w-[10rem] mt-10 lg:mt-0 lg:ml-16">
+                        {choose.img && <img src="../images/nimion-primary-dark.png" alt="Icon Nimion" class="w-14 h-14 lg:-ml-6" />}
+                        <h4 class={choose.title === 'NIMION' ? "text-center tracking-widest font-normal text-[1.1rem] w-[6rem]" : "text-center text-[1.1rem] font-medium w-[10rem]"}>{choose.title}</h4>
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-[6rem] w-[22rem] lg:w-auto">
+                        <li class="flex flex-col justify-center items-center max-w-[20%] h-[11rem] w-[9rem]">
+                            <img class="w-[3rem] h-[3rem] ml-auto mr-auto" src={choose.bft ? tick : noTick} alt="Icon tick" />
+                            <p class="h-[3rem] text-center w-[10rem]"><span class=" font-normal text-[.7rem] sm:text-xs ml-auto mr-auto lg:w-[5rem] lg:max-w-[9rem]">{choose.optOn}</span></p>
+                        </li>
+                        <li class="flex flex-col justify-center items-center max-w-[20%] h-[11rem] w-[9rem]">
+                            <img class="w-[3rem] h-[3rem] ml-auto mr-auto" src={(typeof choose.optTw === 'object' && choose.optTw.bft) ? tick : noTick} alt="Icon tick" />
+                            <p class="h-[3rem] text-center w-[10rem]"><span class=" font-normal text-[.7rem] sm:text-xs ml-auto mr-auto lg:w-[5rem] lg:max-w-[9rem]">{(typeof choose.optTw === 'object' && choose.optTw.desc) ? choose.optTw.desc : choose.optTw}</span></p>
+                        </li>
+                        <li class="flex flex-col justify-center items-center max-w-[20%] h-[11rem] w-[9rem]">
+                            <img class="w-[3rem] h-[3rem] ml-auto mr-auto" src={choose.bft ? tick : noTick} alt="Icon tick" />
+                            <p class="h-[3rem] text-center w-[10rem]"><span class=" font-normal text-[.7rem] sm:text-xs ml-auto mr-auto lg:w-[5rem] lg:max-w-[9rem]">{choose.optTh}</span></p>
+                        </li>
+                        <li class="flex flex-col justify-center items-center max-w-[20%] h-[11rem] w-[9rem]">
+                            <img class="w-[3rem] h-[3rem] ml-auto mr-auto" src={(typeof choose.optFo === 'object' && choose.optFo.bft) ? tick : noTick} alt="Icon tick" />
+                            <p class="h-[3rem] w-[10rem] text-center"><span class=" font-normal text-[.7rem] sm:text-xs ml-auto mr-auto lg:w-[5rem] lg:max-w-[9rem]">{(typeof choose.optFo === 'object' && choose.optFo.desc) ? choose.optFo.desc : choose.optFo}</span></p>
+                        </li>
+                    </div>
+                </ul>
+                <div class="grid place-self-center bg-secondary-light w-[80%] h-[0.2rem] rounded-3xl m-auto"></div>
+            ))}
+        </div>
+    </article>
+    <div></div>
+</section>

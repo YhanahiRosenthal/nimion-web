@@ -32,9 +32,13 @@ module.exports = {
                 'lato': ['Lato'],
                 'garamond': ['Garamond']
             },
+			backgroundImage:{
+				'background-triangle': "url('/public/images/triback.png')",
+			},
 			boxShadow: {
 				"cards": "4px 5px 10px -7px rgba(0,0,0,0.75)",
 				'custom': '0 0 1.6rem #8893F3',
+				'filosofy-card': '10px 10px 1px -4px rgba(0,0,0,0.75)',
 			},
 			animation: {
 				widther: 'expandWidth 1.5s',
