@@ -35,14 +35,16 @@ const cardContent = [
 <div class="flex flex-row justify-around items-center w-4/5 mb-10">
 {
     cardContent.map((card) =>
-        <div class="w-72 h-112 p-7 flex flex-col justify-around items-center rounded-md bg-primary-dark-background shadow-cards shadow-secondary-light">
+        <div class="w-72 h-112 p-7 flex flex-col justify-around items-center rounded-md bg-primary-dark-background shadow-cards shadow-secondary-light ">
                 <figure>
                 <img src={card.img} alt="your web icon">
                 </figure>
                 <h6 class="font-montserrat text-center text-lg text-white font-bold">{card.title}</h6>
-                <p class="font-montserrat text-sm font-medium text-center text-logo-gray leading-7">
-                    {card.content}
-                </p>
+                <div class="md:min-h-[13rem]">
+                    <p class="font-montserrat text-sm font-medium text-justify text-logo-gray leading-7 mt-6">
+                        {card.content}
+                    </p>
+                    </div>
         </div>
     )
 }

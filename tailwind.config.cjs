@@ -3,6 +3,9 @@ module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			screens: {
+				screnni: '1612px'
+			},
 			colors: {
 				"primary-dark-background": "#080E29",
 				"primary-dark-intense": "#02012C",
@@ -44,6 +47,7 @@ module.exports = {
 				widther: 'expandWidth 1.5s',
 				appear: 'appear 1.5s',
 				appearTitle: 'appearTitle 1.5s',
+				carousel: 'carouselInfinite 30s infinite linear'
 			},
 			keyframes: {
 				'appear': {
@@ -68,6 +72,10 @@ module.exports = {
 					'0%': { width: '0' },
 					'100%': { width: '50%' },
 				},
+				'carouselInfinite': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(0%)' },
+				  },
 			}
 	}
 }

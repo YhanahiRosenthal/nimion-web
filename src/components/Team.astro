@@ -1,18 +1,7 @@
 ---
+import CarouselTech from "./CarouselTech.astro";
 import yhanaPic from '/public/images/elYhana.png';
 import crisPic from '/public/images/elCris.png';
-import react from '/public/images/react.png';
-import javaScript from '/public/images/javascript.png';
-import css from '/public/images/css.png';
-import html from '/public/images/html.png';
-import java from '/public/images/java.png';
-import three from '/public/images/three.png';
-import node from '/public/images/node.png';
-import fireBase from '/public/images/firebase.png';
-import mongo from '/public/images/mongodb.png';
-import mysql from '/public/images/mysql.png';
-import ts from '/public/images/typescript.png';
-import astro from '/public/images/astro.png';
 
 const  profiles = [
     {
@@ -27,10 +16,6 @@ const  profiles = [
         dev: 'Desarrollador',
         devDescription: 'Encargado de gestionar las operaciones de Nimion en la republica del Uruguay. Su dedicación y ética de trabajo inspiran a otros a superar barreras. Su destreza técnica es igualada por su colaboración sobresaliente en equipos multidisciplinarios, guiando a sus compañeros con pasión y conocimiento. Thor mismo temblaría si supiera que tiene que enfrentarse a él.'
     }
-]
-
-const techsImg = [
-    react, javaScript, css, html, java, three, node, fireBase, mongo, mysql, ts, astro
 ]
 ---
 
@@ -59,9 +44,6 @@ const techsImg = [
         ) }
     </div>
     <div class='flex flex-col items-center w-full h-72 bg-primary-dark-intense/40'>
-        <h3 class='font-bold text-xl text-golden mt-10'>Tecnologías que usamos</h3>
-        <div class='flex justify-around w-full'>
-            {techsImg.map((tech)=> <img class="w-[2.5rem] h-[2rem] mt-20" src={tech} alt="tech image"> )}
-        </div>
+        <CarouselTech />
     </div>
 </section>

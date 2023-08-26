@@ -1,0 +1,30 @@
+---
+import react from '/public/images/react.png';
+import javaScript from '/public/images/javascript.png';
+import css from '/public/images/css.png';
+import html from '/public/images/html.png';
+import java from '/public/images/java.png';
+import three from '/public/images/three.png';
+import node from '/public/images/node.png';
+import fireBase from '/public/images/firebase.png';
+import mongo from '/public/images/mongodb.png';
+import mysql from '/public/images/mysql.png';
+import ts from '/public/images/typescript.png';
+import astro from '/public/images/astro.png';
+
+const techsImg = [
+    react, javaScript, css, html, java, three, node, fireBase, mongo, mysql, ts, astro
+]
+---
+<section class="w-[100%] overflow-hidden">
+    <h3 class='font-bold text-xl text-golden text-center mt-10'>Tecnologías que usamos</h3>
+    <div class="flex m-auto w-[70%] overflow-hidden mt-16 ">
+        <div class='flex w-[calc(2rem * 24)] animate-carousel'>
+            {techsImg.map((tech)=> ( <div class="w-[5rem] h-[5rem] mx-3"><img src={tech} alt="tech image"></div>))}
+        </div>
+        <div class='flex w-[calc(2rem * 24)] animate-carousel'>
+            {techsImg.map((tech)=> ( <div class="w-[5rem] h-[5rem] mx-3"><img src={tech} alt="tech image"></div>))}
+        </div>
+    </div>
+</section>
+
