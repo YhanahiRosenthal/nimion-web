@@ -4,24 +4,24 @@ const Arrow = "../images/arrow.png";
 const Cuestions = () => {
     const faqs = [
         {
-            Qtn: '¿Que vino primero: el huevo o la gallina?',
-            answ: 'Si consideramos "huevo" en términos generales, las especies que existían antes de las gallinas también ponían huevos, y estas criaturas evolucionaron gradualmente en lo que finalmente se convertiría en gallinas.'
+            Qtn: ' ¿Mi negocio va a aparecer en Google?',
+            answ: 'Junto con el sitio web incluimos SEO GRATIS ¿a qué nos referimos con esto? Vas a tener una base de SEO básico para poder aparecer bien posicionado con tu sitio sin pagar un extra. Si quisieras mejorar este posicionamiento contamos con un servicio dedicado a optimizar tu sitio web para que las velocidades de carga de tu sitio sean ideales y los motores de busqueda no tengan problemas para rastrearla. Nuestro objetivo es que tu sitio web tenga un rendimiento óptimo en términos de velocidad de carga, accesibilidad y visibilidad.'
         },
         {
-            Qtn: '¿Por qué no hemos detectado ninguna señal de vida extraterrestre?',
-            answ: 'El universo es inmensamente grande, con billones de estrellas y planetas potencialmente habitables. Sin embargo, las distancias astronómicas son tan vastas que incluso si hay muchas civilizaciones extraterrestres, las probabilidades de que estén lo suficientemente cerca como para detectar sus señales son bastante bajas.'
+            Qtn: '¿Tengo que pagar un costo mensual por mi sitio web?',
+            answ: 'No, no manejamos ningún costo mensual obligatorio para el servicio de sitio web, una vez realizado el sitio no tiene costos extras. Si es de tu interes puedes contratar el servicio de mantenimiento mensual para optimizar la funcionalidades y mantener actualizada tu web.'
         },
         {
-            Qtn: 'Si se encontrara una forma de detener el envejecimiento y prolongar la vida indefinidamente, ¿sería ético hacerlo?',
-            answ: 'La cuestión de si detener el envejecimiento y prolongar la vida indefinidamente sería ético es un tema complejo y debatido en la ética, la filosofía y la sociedad en general.'
+            Qtn: '¿Quién hace los diseños de mi pagina Web?',
+            answ: 'Contamos con un equipo de profesionales altamente capacitados en la creación de páginas web de alta calidad. Nuestros diseñadores web expertos se dedican a construir sitios web que combinan a la perfección estética y funcionalidad. Utilizamos las últimas tendencias y tecnologías en diseño web para garantizar que tu página tenga un aspecto moderno y atractivo. Recibiras el sitio una vez terminado y funcionando.'
         },
         {
-            Qtn: ' ¿Cómo se determina lo que es moralmente correcto en diferentes contextos?',
-            answ: 'Dependiendo del tipo de moralidad podemos llegar a una respuesta. En última instancia, la cuestión de si la moralidad es relativa a la cultura o si existen normas morales absolutas sigue siendo objeto de debate. Las opiniones varían según las perspectivas filosóficas y las creencias individuales.'
+            Qtn: '¿Mi página Web tambien sirve para celulares o tablets?',
+            answ: 'Sí! Todos nuestros diseños de sitios Web son responsivos, es decir, son accesibles desde cualquier dispositivo con conexion a internet.'
         },
         {
-            Qtn: ' ¿Cómo puedes estar seguro de que lo que percibes como realidad no es solo una ilusión o un sueño?',
-            answ: 'La pregunta sobre la naturaleza de la realidad y cómo podemos estar seguros de que lo que percibimos no es una ilusión o un sueño es un tema recurrente en la filosofía y la reflexión existencial. Esta cuestión ha sido explorada a lo largo de la historia por filósofos y pensadores de diversas tradiciones. Podemos decir que no hay una respuesta definitiva.'
+            Qtn: '¿Cúanto es el tiempo que lleva realizar la página web?',
+            answ: 'Actualmente manejamos tiempos de aproximadamente una semana laboral para realizar el diseño web, depende mucho de que tengamos toda la información que nos brinda el cliente para realizar el mismo sin contar los ajustes que quiera realizar luego de finalizado el sitio.'
         },
     ]
 
