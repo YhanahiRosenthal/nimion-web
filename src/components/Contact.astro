@@ -1,8 +1,8 @@
 ---
 const wpp = "../images/whatsapp.png";
-const formSubmit = import.meta.env.FORM_SUBMIT;
-const front_URL = import.meta.env.FRONT_URL;
-const todayDate = new Date();
+const emailServiceID = import.meta.env.EMAILJS_SERVICEID
+const emailTemplateID = import.meta.env.EMAILJS_TEMPLATEID
+const emailPublicKEY = import.meta.env.EMAILJS_PUBLICKEY
 ---
 <section class="flex justify-center items-center bg-[#141933] pt-16 pb-16">
     <div class="flex flex-wrap justify-center sm:shadow-custom sm:shadow-[#19126C] sm:w-[32rem] lg:w-auto">
@@ -18,29 +18,98 @@ const todayDate = new Date();
         </article>
         <article class="bg-white h-[34rem] w-[80%] sm:w-[32rem] rounded-b-lg lg:rounded-r-lg lg:rounded-bl-none">
             <h4 class=" font-bold text-[1.2rem] sm:text-[1.8rem] text-center pt-10">Cuentanos sobre tu proyecto!</h4>
-            <form class="flex flex-col items-center gap-4 mt-6" action={formSubmit} method="POST">
-                <input name="Date" type="hidden" value={todayDate.toLocaleString()}>
+            <form id="contact-form" class="flex flex-col items-center gap-4 mt-6">
+                <input id="user-id" type="hidden" name="user_id" value={emailPublicKEY}>
+                <input id="service-id" type="hidden" name="service_id" value={emailServiceID}>
+                <input id="template-id" type="hidden" name="template_id" value={emailTemplateID}>
                 <div class="flex items-center w-[70%] h-16 -ml-3">
                     <img class="w-6 h-6 opacity-60" src="../images/user.png" alt="icon user">
-                    <input name="Full_Name" type="text" placeholder="Nombre completo" class=" w-[85%] ml-3 pl-1 h-10 border-0 border-b border-gray-400 text-sm font-medium outline-none hover:border-secondary-light focus:border-b-2 focus:border-secondary-light">
+                    <input id="from-name" name="from_name" type="text" placeholder="Nombre completo" class=" w-[85%] ml-3 pl-1 h-10 border-0 border-b border-gray-400 text-sm font-medium outline-none hover:border-secondary-light focus:border-b-2 focus:border-secondary-light">
                 </div>
                 <div class="flex items-center w-[70%] h-16 -ml-3">
                     <img class="w-6 h-6" src="../images/email.png" alt="icon email">
-                    <input name="Email" type="email" placeholder="Ingrese Email" class=" w-[85%] ml-3 pl-1 h-10 border-0 border-b border-gray-400 text-sm font-medium outline-none hover:border-secondary-light focus:border-b-2 focus:border-secondary-light">
+                    <input id="from-email" name="from_email" type="email" placeholder="Ingrese Email" class=" w-[85%] ml-3 pl-1 h-10 border-0 border-b border-gray-400 text-sm font-medium outline-none hover:border-secondary-light focus:border-b-2 focus:border-secondary-light">
                 </div>
                 <div class="flex items-center w-[70%] h-16 -ml-3">
                     <img class="w-6 h-6" src="../images/phone.png" alt="icon user">
-                    <input name="Phone" type="text" placeholder="Ingrese celular" class=" w-[85%] ml-3 pl-1 h-10 border-0 border-b border-gray-400 text-sm font-medium outline-none hover:border-secondary-light focus:border-b-2 focus:border-secondary-light">
+                    <input id="from-phone" name="from_phone" type="text" placeholder="Ingrese celular" class=" w-[85%] ml-3 pl-1 h-10 border-0 border-b border-gray-400 text-sm font-medium outline-none hover:border-secondary-light focus:border-b-2 focus:border-secondary-light">
                 </div>
-                <textarea name="Message" class="h-[7.5rem] w-[70%] resize-none border border-gray-400 rounded-lg p-3 mt-3 text-xs font-semibold outline-none focus:border-secondary-light focus:border-2 scrollbar" placeholder="Mensaje"></textarea>
-                <button type="submit" class="flex justify-center items-center gap-1 text-[.8rem] font-medium text-white bg-[#7683F9] bg-opacity-100 w-[8rem] h-[2.3rem] rounded-sm transition-all mb-1 hover:bg-secondary-light">Enviar iniciativa</button>
+                <textarea id="message" name="message" class="h-[7.5rem] w-[70%] resize-none border border-gray-400 rounded-lg p-3 mt-3 text-xs font-semibold outline-none focus:border-secondary-light focus:border-2 scrollbar" placeholder="Mensaje"></textarea>
+                <button class="flex justify-center items-center gap-1 text-[.8rem] font-medium text-white bg-[#7683F9] bg-opacity-100 w-[8rem] h-[2.3rem] rounded-sm transition-all mb-1 hover:bg-secondary-light">Enviar iniciativa</button>
 
-                <input type="hidden" name="_next" value={front_URL}>
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="box">
-                <input type="hidden" name="_subject" value="Nimion Client Message!">
-                <input type="hidden" name="_cc" value="cristianlotorto@gmail.com,yhanahi16@gmail.com">
             </form>
         </article>
     </div>
 </section>
+
+<script>
+    const formSubmit = "https://api.emailjs.com/api/v1.0/email/send";
+    const frontURL = "http://localhost:3000/";
+    const contactForm = document.getElementById('contact-form');
+    const contactName = document.getElementById('from-name');
+    let from_name = "";
+    const contactEmail = document.getElementById('from-email');
+    let from_email = "";
+    const contactPhone = document.getElementById('from-phone');
+    let from_phone = "";
+    const contactMessage = document.getElementById('message');
+    let message = "";
+    const userID = document.getElementById('user-id')?.value;
+    const templateID = document.getElementById('template-id')?.value;
+    const serviceID = document.getElementById('service-id')?.value;
+
+    const formInputs = [
+        contactName,
+        contactEmail,
+        contactPhone,
+        contactMessage,
+    ]
+
+    const formData = [
+        from_name,
+        from_email,
+        from_phone,
+        message
+    ]
+
+    formInputs.forEach((input, index) => {
+    input?.addEventListener('change', (e) =>{
+        formData[index] = e.target?.value;
+    })
+    });
+
+
+    contactForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = {
+            service_id: serviceID,
+            template_id: templateID,
+            user_id: userID,
+            template_params:{
+                from_name: formData[0],
+                from_email: formData[1],
+                from_phone: formData[2],
+                message: formData[3]
+            }
+        }
+        const postingData = async () => {
+            try{
+                const req = await fetch(formSubmit, {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {'Content-Type': 'application/json'}
+                })
+
+                if (req.status === 200){
+                    alert('Email sent successfully');
+                    window.location.href = frontURL;
+                }
+
+            }catch(error){
+                console.error('There was an error: ', error);
+            }
+        }
+        postingData();
+
+    })
+</script>
