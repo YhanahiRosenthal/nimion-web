@@ -1,7 +1,9 @@
 ---
+import Form from './Form';
+import ToastSuccess from "./ToastSuccess.astro";
 const wpp = "../images/whatsapp.png";
 ---
-<section class="flex justify-center items-center bg-[#141933] pt-16 pb-16">
+<section id="section" class="relative flex justify-center items-center bg-[#141933] pt-16 pb-16">
     <div class="flex flex-wrap justify-center sm:shadow-custom sm:shadow-[#19126C] sm:w-[32rem] lg:w-auto">
         <article class="bg-[#02012C] h-[34rem] w-[80%] sm:w-[32rem] text-white rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none">
             <div class="bg-[url('../images/triback.png')] bg-cover bg-no-repeat bg-bottom h-[100%] w-[100%]">
@@ -14,23 +16,37 @@ const wpp = "../images/whatsapp.png";
             </div>
         </article>
         <article class="bg-white h-[34rem] w-[80%] sm:w-[32rem] rounded-b-lg lg:rounded-r-lg lg:rounded-bl-none">
-            <h4 class=" font-bold text-[1.2rem] sm:text-[1.8rem] text-center pt-10">Cuentanos sobre tu proyecto!</h4>
-            <form class="flex flex-col items-center gap-4 mt-6">
-                <div class="flex items-center w-[70%] h-16 -ml-3">
-                    <img class="w-6 h-6 opacity-60" src="../images/user.png" alt="icon user">
-                    <input type="text" placeholder="Nombre completo" class=" w-[85%] ml-3 pl-1 h-10 border-0 border-b border-gray-400 text-sm font-medium outline-none hover:border-secondary-light focus:border-b-2 focus:border-secondary-light">
-                </div>
-                <div class="flex items-center w-[70%] h-16 -ml-3">
-                    <img class="w-6 h-6" src="../images/email.png" alt="icon email">
-                    <input type="email" placeholder="Ingrese Email" class=" w-[85%] ml-3 pl-1 h-10 border-0 border-b border-gray-400 text-sm font-medium outline-none hover:border-secondary-light focus:border-b-2 focus:border-secondary-light">
-                </div>
-                <div class="flex items-center w-[70%] h-16 -ml-3">
-                    <img class="w-6 h-6" src="../images/phone.png" alt="icon user">
-                    <input type="text" placeholder="Ingrese celular" class=" w-[85%] ml-3 pl-1 h-10 border-0 border-b border-gray-400 text-sm font-medium outline-none hover:border-secondary-light focus:border-b-2 focus:border-secondary-light">
-                </div>
-                <textarea class="h-[7.5rem] w-[70%] resize-none border border-gray-400 rounded-lg p-3 mt-3 text-xs font-semibold outline-none focus:border-secondary-light focus:border-2 scrollbar" placeholder="Mensaje"></textarea>
-                <button class="flex justify-center items-center gap-1 text-[.8rem] font-medium text-white bg-[#7683F9] bg-opacity-100 w-[8rem] h-[2.3rem] rounded-sm transition-all mb-1 hover:bg-secondary-light">Enviar iniciativa</button>
-            </form>
+            <h4 class="font-bold text-[1.2rem] sm:text-[1.8rem] text-center pt-10">Cuentanos sobre tu proyecto!</h4>
+            <Form client:only="react" />
         </article>
     </div>
+    <div id="toast-success-container" class="hidden">
+    <ToastSuccess message='Message sent successfully !!' errOrSucc="success" />
+    </div>
+    <div id="toast-error-container" class="hidden">
+    <ToastSuccess message='An error has ocurred, try again later' errOrSucc="error" />
+    </div>
 </section>
+
+<script>
+    import { toastSuccessState, toastErrorState } from '../nimionStore';
+
+    const toastSuccess = document.getElementById('toast-success-container');
+    const toastError = document.getElementById('toast-error-container');
+
+    toastSuccessState.subscribe(success => {
+        if(success){
+            toastSuccess?.setAttribute('class', 'block');
+        }else{
+            toastSuccess?.setAttribute('class', 'hidden');
+        }
+    })
+
+    toastErrorState.subscribe(error => {
+        if(error){
+            toastError?.setAttribute('class', 'block');
+        }else{
+            toastError?.setAttribute('class', 'hidden');
+        }
+    })
+</script>
