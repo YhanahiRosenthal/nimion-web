@@ -1,9 +1,21 @@
 ---
 const { message, errOrSucc, display } = Astro.props;
-const successStyle = 'absolute left-1/3 bottom-1/3 flex justify-center items-center w-128 h-40 animate-appear  z-10 bg-green-600 border-2 border-primary-dark-background rounded font-semibold';
-const errorStyle = 'absolute left-1/3 bottom-1/3 flex justify-center items-center w-128 h-40 animate-appear absolute z-10 bg-red-400 border-2 border-primary-dark-background rounded font-semibold';
+const successStyle = 'flex justify-center items-center w-80 h-14 animate-toast text-green-600 z-10 bg-white border-2 border-green-600 rounded-lg font-semibold';
+const errorStyle = 'flex justify-center items-center min-w-80 h-14 px-3 animate-toast text-red-600 z-10 bg-white border-2 border-red-600 rounded-lg font-semibold';
 ---
 
-<section class=>
-        <p class=`${errOrSucc === 'success' ? successStyle : errorStyle}`>{message}</p>
+<section class='fixed left-6 bottom-6'>
+        <p class={errOrSucc === 'success' ? successStyle : errorStyle}>
+                {errOrSucc === 'success' ? (
+            <span class="flex gap-3">
+                {message}
+                <img src='./images/success.png' alt="Success" class="w-6 h-6" />
+            </span>
+        ) : (
+            <span class="flex gap-3">
+                {message}
+                <img src='./images/error.png' alt="Error" class="w-6 h-6" />
+            </span>
+        )}
+        </p>
 </section>

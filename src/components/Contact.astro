@@ -4,7 +4,7 @@ import ToastSuccess from "./ToastSuccess.astro";
 const wpp = "../images/whatsapp.png";
 ---
 <section id="section" class="relative flex justify-center items-center bg-[#141933] pt-16 pb-16">
-    <div class="flex flex-wrap justify-center sm:shadow-custom sm:shadow-[#19126C] sm:w-[32rem] lg:w-auto">
+    <div class="flex flex-wrap justify-center sm:shadow-custom sm:shadow-[#19126C] sm:w-[32rem] lg:w-auto" id="contact">
         <article class="bg-[#02012C] h-[34rem] w-[80%] sm:w-[32rem] text-white rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none">
             <div class="bg-[url('../images/triback.png')] bg-cover bg-no-repeat bg-bottom h-[100%] w-[100%]">
                 <h4 class=" font-bold text-[1.2rem] sm:text-[1.8rem] text-center pt-10">Contactanos por Whatsapp!</h4>
@@ -20,10 +20,10 @@ const wpp = "../images/whatsapp.png";
             <Form client:only="react" />
         </article>
     </div>
-    <div id="toast-success-container" class="hidden">
-    <ToastSuccess message='Message sent successfully !!' errOrSucc="success" />
+    <div id="toast-success-container" class="">
+    <ToastSuccess message='Message sent successfully' errOrSucc="success" />
     </div>
-    <div id="toast-error-container" class="hidden">
+    <div id="toast-error-container" class="">
     <ToastSuccess message='An error has ocurred, try again later' errOrSucc="error" />
     </div>
 </section>

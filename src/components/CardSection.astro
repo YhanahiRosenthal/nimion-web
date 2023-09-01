@@ -36,7 +36,7 @@ const plans = [
 
 ---
 <section class="bg-primary-dark-background/95 font-semibold pb-16 pt-16">
-    <h2 class="text-4xl font-bold text-center text-white">Nuestros mejores precios para ti</h2>
+    <h2 class="text-4xl font-bold text-center text-white" id="price">Nuestros mejores precios para ti</h2>
     <article class="flex flex-wrap justify-center gap-[2.5rem]">
         {plans.map((plan) => (
             <div class="flex flex-col gap-4 bg-white w-[22rem] h-[39rem] rounded-lg mt-[3.5rem] shadow-custom shadow-secondary-light">
@@ -73,9 +73,11 @@ const plans = [
                         Contactanos
                         <img class="w-[.9rem] h-[.9rem]" src={wpp} alt="icon Whatsapp">
                     </button>
-                    <button class="text-secondary-light text-xs mt-3">Enviar mail de contacto</button>
+                    <button class="text-secondary-light text-xs mt-3"><a href="#contact">Enviar mail de contacto</a></button>
                 </div>
             </div>
         ))}
     </article>
 </section>
+
+<script src="../pages/smoth.js"></script>
