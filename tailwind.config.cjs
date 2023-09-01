@@ -46,6 +46,7 @@ module.exports = {
 			animation: {
 				widther: 'expandWidth 1.5s',
 				appear: 'appear 1.5s',
+				toast: 'toast .5s',
 				appearTitle: 'appearTitle 1.5s',
 				carousel: 'carouselInfinite 30s infinite linear'
 			},
@@ -54,6 +55,16 @@ module.exports = {
 					'0%': {
 						opacity: '0',
 						transform: 'translateY(30%)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					},
+				},
+				'toast': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(110%)'
 					},
 					'100%': {
 						opacity: '1',
