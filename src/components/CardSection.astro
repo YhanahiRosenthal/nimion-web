@@ -69,10 +69,12 @@ const plans = [
                 <div class="flex flex-col items-center gap-1 h-[13rem] mt-1 -mb-1 bg-primary-dark-intense text-white rounded-b-lg">
                     <p class="text-center text-[.7rem] font-light mt-2">A partir de</p>
                     <p class="text-center text-[1.8rem] -mt-1">UYU {plan.price}</p>
-                    <button class="flex justify-center items-center gap-1 text-[.8rem] font-medium bg-secondary-light bg-opacity-70 w-[8rem] h-[2.3rem] rounded-sm transition-all mb-1 hover:bg-opacity-100 ">
-                        Contactanos
-                        <img class="w-[.9rem] h-[.9rem]" src={wpp} alt="icon Whatsapp">
-                    </button>
+                    <a href="https://api.whatsapp.com/send?phone=59897430011&text=hola,%20qué%20tal?%20Quiero%20más%20información%20sobre%20los%20precios!" target="_blank">
+                        <button class="flex justify-center items-center gap-1 text-[.8rem] font-medium bg-secondary-light bg-opacity-70 w-[8rem] h-[2.3rem] rounded-sm transition-all mb-1 hover:bg-opacity-100 ">
+                            Contactanos
+                            <img class="w-[.9rem] h-[.9rem]" src={wpp} alt="icon Whatsapp">
+                        </button>
+                    </a>
                     <button class="text-secondary-light text-xs mt-3"><a href="#contact">Enviar mail de contacto</a></button>
                 </div>
             </div>
