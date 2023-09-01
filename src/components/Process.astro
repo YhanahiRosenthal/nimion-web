@@ -24,15 +24,15 @@ const steps = [
 ]
 ---
 <section class="bg-primary-dark-background">
-    <h4 class="text-white font-semibold text-[2.5rem] text-center pt-16">Cómo lo Logramos?</h4>
-    <p class=" text-golden font-medium text-[.8rem] text-center pt-16 m-auto max-w-[30rem]" id="process">Nuestro compromiso es construir relaciones a largo plazo con nuestros clientes, brindándoles el apoyo y la atención que necesitan en cada etapa del proceso.</p>
+    <h4 class="text-white font-semibold text-[2.5rem] text-center pt-16 cursor-default">Cómo lo Logramos?</h4>
+    <p class=" text-golden font-medium text-[.8rem] text-center pt-16 m-auto max-w-[30rem] cursor-default" id="process">Nuestro compromiso es construir relaciones a largo plazo con nuestros clientes, brindándoles el apoyo y la atención que necesitan en cada etapa del proceso.</p>
     <article class="flex flex-wrap justify-evenly py-16">
         <div class="hidden lg:block screnni:hidden bg-secondary-light w-[63%] h-[0.45rem] rounded-3xl -mx-10 mt-16 absolute"></div>
         {steps.map((step) => (
             <div class="text-white z-10">
-                <img class="w-[9rem] h-[9rem] m-auto" src={step.img} alt="Icon step">
-                <h6 class=" font-semibold text-[1.2rem] max-w-[20rem] h-16 m-auto text-center" >{step.title}</h6>
-                <div class="max-w-[90%] m-auto">
+                <img class="w-[9rem] h-[9rem] m-auto hover:rotate-360 duration-1000 cursor-pointer" src={step.img} alt="Icon step">
+                <h6 class=" font-semibold text-[1.2rem] max-w-[20rem] h-16 m-auto text-center cursor-default" >{step.title}</h6>
+                <div class="max-w-[90%] m-auto cursor-default">
                     <div class="flex gap-9 my-14 max-w-[23rem]">
                         <img class="w-5 h-5" src="../images/tick.png" alt="Icon tick">
                         <p class=" text-sm">{step.stOne}</p>
