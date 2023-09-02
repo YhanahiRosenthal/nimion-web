@@ -47,10 +47,10 @@ module.exports = {
 				'360': '360deg'
 			},
 			animation: {
-				widther: 'expandWidth 2s',
-				appear: 'appear 3s',
+				widther: 'expandWidth 1.5s',
+				appear: 'appear 2s',
 				toast: 'toast .5s ease-in-out',
-				appearTitle: 'appearTitle 3s',
+				appearTitle: 'appearTitle 2s',
 				carousel: 'carouselInfinite 30s infinite linear',
 				headerNimionAppear: 'appear 1.5s ease-in-out alternate both',
 				headerNimionDisappear: 'disappear 1.5s ease-in-out alternate both'
