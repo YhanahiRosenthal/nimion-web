@@ -43,12 +43,17 @@ module.exports = {
 				'custom': '0 0 1.6rem #8893F3',
 				'filosofy-card': '10px 10px 1px -4px rgba(0,0,0,0.75)',
 			},
+			rotate: {
+				'360': '360deg'
+			},
 			animation: {
 				widther: 'expandWidth 1.5s',
-				appear: 'appear 1.5s',
-				toast: 'toast .5s',
-				appearTitle: 'appearTitle 1.5s',
-				carousel: 'carouselInfinite 30s infinite linear'
+				appear: 'appear 2s',
+				toast: 'toast .5s ease-in-out',
+				appearTitle: 'appearTitle 2s',
+				carousel: 'carouselInfinite 30s infinite linear',
+				headerNimionAppear: 'appear 1.5s ease-in-out alternate both',
+				headerNimionDisappear: 'disappear 1.5s ease-in-out alternate both'
 			},
 			keyframes: {
 				'appear': {
@@ -60,6 +65,14 @@ module.exports = {
 						opacity: '1',
 						transform: 'translateY(0)'
 					},
+				},
+				'disappear':{
+					'0%':{
+						opacity: '1'
+					},
+					'100%':{
+						opacity: '0'
+					}
 				},
 				'toast': {
 					'0%': {

@@ -36,10 +36,10 @@ const plans = [
 
 ---
 <section class="bg-primary-dark-background/95 font-semibold pb-16 pt-16">
-    <h2 class="text-4xl font-bold text-center text-white" id="price">Nuestros mejores precios para ti</h2>
+    <h2 class="text-4xl font-bold text-center text-white cursor-default" id="price">Nuestros mejores precios para ti</h2>
     <article class="flex flex-wrap justify-center gap-[2.5rem]">
         {plans.map((plan) => (
-            <div class="flex flex-col gap-4 bg-white w-[22rem] h-[39rem] rounded-lg mt-[3.5rem] shadow-custom shadow-secondary-light">
+            <div class="flex flex-col gap-4 bg-white w-[22rem] h-[39rem] rounded-lg mt-[3.5rem] shadow-custom shadow-secondary-light hover:translate-y-[-0.25rem] duration-500 cursor-pointer">
                 <img class="w-10 m-auto mt-4 -mb-3" src={plan.img} alt="icon corporative web">
                 <h4 class="text-center text-3xl font-bold mt-2">{plan.title}</h4>
                 <p class="text-center text-xs m-auto mt-2 -mb-3 w-[80%]">{plan.littleDescription}</p>
