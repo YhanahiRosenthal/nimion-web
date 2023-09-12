@@ -1,20 +1,33 @@
 ---
 import nimionLogo from '/public/images/nimion-primary-dark.png';
+import burgerIcon from '/public/images/burguer-menu-medium.png';
 ---
 
 <header class="flex items-center justify-between bg-transparent 168 h-40">
-    <div id="index" class="flex justify-start items-center w-[6rem] h-[6rem] ml-25">
+    <div id="index" class="flex justify-start items-center w-[6rem] h-[6rem] ml-5 lg:ml-25">
         <img id="logo-header" class="hover:rotate-360 duration-[1500ms]" src={nimionLogo} alt="nimion-logo">
         <h4 id="header-nimion" class="opacity-0" >NIMION</h4>
     </div>
 
-    <ul class="flex w-auto mr-10 list-none justify-around font-montserrat text-sm text-white ">
+
+    <div class="flex flex-col top-15 right-5 relative sm:hidden">
+        <img id="burger-button" class="w-[1.6rem] sm:w-auto self-end" src={burgerIcon} alt="burger-menu">
+        <ul id="nav-menu" class="hidden">
+            <li class="mr-5 hover:text-golden"><a href="#price">Precios</a></li>
+            <li class="mr-5 hover:text-golden"><a href="#process">Proceso</a></li>
+            <li class="mr-5 hover:text-golden"><a href="#aboutUs">Nosotros</a></li>
+            <li class="mr-5 hover:text-golden"><a href="#faq">FAQ's</a></li>
+            <li class="mr-5 hover:text-golden"><a href="#contact">Contacto</a></li>
+        </ul>
+    </div>
+    <ul id="nav-menu" class="hidden sm:flex flex-col sm:flex-row w-auto mr-10 leading-loose sm:leading-none list-none items-start justify-around font-montserrat text-sm text-white">
         <li class="mr-5 hover:text-golden"><a href="#price">Precios</a></li>
         <li class="mr-5 hover:text-golden"><a href="#process">Proceso</a></li>
         <li class="mr-5 hover:text-golden"><a href="#aboutUs">Nosotros</a></li>
         <li class="mr-5 hover:text-golden"><a href="#faq">FAQ's</a></li>
         <li class="mr-5 hover:text-golden"><a href="#contact">Contacto</a></li>
     </ul>
+
     <a class="justify-center items-center rounded-3xl bg-secondary-light/80 text-white w-10 h-14 fixed bottom-10 right-10 z-50 transition-all hover:scale-110 hidden lg:flex" href="#index">
         <p>🡩</p>
     </a>
@@ -23,11 +36,20 @@ import nimionLogo from '/public/images/nimion-primary-dark.png';
 <script>
     const headerNimion = document.getElementById('header-nimion');
     const logoHeader = document.getElementById('logo-header');
+    const burguerButton = document.getElementById('burger-button');
+    const navMenu = document.getElementById('nav-menu');
 
     logoHeader?.addEventListener('mouseover', () => {
-        headerNimion?.setAttribute('class', 'text-center tracking-[0.2rem] font-normal text-[2rem] w-[6rem] ml-5 animate-headerNimionAppear')
+        headerNimion?.setAttribute('class', 'text-center tracking-[0.2rem] font-normal text-[2rem] w-[6rem] ml-5 animate-headerNimionAppear');
     })
     logoHeader?.addEventListener('mouseout', () => {
-        headerNimion?.setAttribute('class', 'text-center tracking-[0.2rem] font-normal text-[2rem] w-[6rem] ml-5 animate-headerNimionDisappear')
+        headerNimion?.setAttribute('class', 'text-center tracking-[0.2rem] font-normal text-[2rem] w-[6rem] ml-5 animate-headerNimionDisappear');
+    })
+    burguerButton?.addEventListener('click', () => {
+        if(navMenu?.className === "hidden"){
+            navMenu?.setAttribute('class', 'absolute z-10 top-5 right-[-1rem] flex flex-col lg:flex-row w-auto mr-10 p-1 leading-loose lg:leading-none list-none items-start justify-around font-montserrat text-sm text-white animate-smallToBig');
+        }else{
+            navMenu?.setAttribute('class', 'hidden');
+        }
     })
 </script>

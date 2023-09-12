@@ -53,7 +53,8 @@ module.exports = {
 				appearTitle: 'appearTitle 2s',
 				carousel: 'carouselInfinite 30s infinite linear',
 				headerNimionAppear: 'appear 1.5s ease-in-out alternate both',
-				headerNimionDisappear: 'disappear 1.5s ease-in-out alternate both'
+				headerNimionDisappear: 'disappear 1.5s ease-in-out alternate both',
+				smallToBig: 'smallToBig .3s ease-in-out alternate both',
 			},
 			keyframes: {
 				'appear': {
@@ -64,6 +65,14 @@ module.exports = {
 					'100%': {
 						opacity: '1',
 						transform: 'translateY(0)'
+					},
+				},
+				'smallToBig': {
+					'0%': {
+						transform: 'scale(0)'
+					},
+					'100%': {
+						transform: 'scale(1)'
 					},
 				},
 				'disappear':{
